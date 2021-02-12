@@ -1,0 +1,86 @@
+<div class="component">
+
+
+    <section class="datos">
+        <div class="logo">
+            <img src="./../../../assets/img/film-158157_640.png" alt="" [routerLink]="'/home'">
+        </div>
+        <div class="caja">
+
+            <div class="caja_text">
+                <span class="caja_texto">Registrate</span>
+            </div>
+
+            <div class="formulario">
+
+                <form autocomplete="off" [formGroup]="form" (ngSubmit)="registrar()">
+
+                    <div class="form-group row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Ingresa tu Nombre</mat-label>
+                            <input matInput placeholder="" type="text" formControlName="nombre">
+                            <mat-error *ngIf="nombreField.hasError('required')">
+                                Por favor ingrese su Nombre
+                            </mat-error>
+                            <mat-error *ngIf="nombreField.hasError('minlength') && !nombreField.hasError('required')">
+                                El Nombre debe ser de mas de 8 caracteres
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Tipo Usuario</mat-label>
+                            <mat-select placeholder="" formControlName="tipo_usuario" matTooltip="Tipo de Usuario">
+                                <mat-option *ngFor="let item of tipoUsuario" [value]="item.value">
+                                    {{item.label}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="tipousuarioField.hasError('required')">
+                                Por favor elija una opción
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Correo</mat-label>
+                            <input matInput placeholder="" type="text" formControlName="user_mail">
+                            <mat-error *ngIf="correoField.hasError('required')">
+                                Campo requerido
+                            </mat-error>
+                            <mat-error *ngIf="correoField.hasError('pattern') && !correoField.hasError('required')">
+                                Correo no válido
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput placeholder="" type="password" formControlName="user_password">
+                            <mat-error *ngIf="passwordField.hasError('required')">
+                                Campo requerido
+                            </mat-error>
+                            <mat-error *ngIf="passwordField.hasError('minlength') && !passwordField.hasError('required')">
+                                La contaraseña debe tener más de 8 caracteres
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="example-button-row">
+                        <button mat-raised-button type="submit" class="button">Registrar</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="registrar">
+                <span>Ya tengo cuenta <a [routerLink]="'/login'">Iniciar Sesión</a></span>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

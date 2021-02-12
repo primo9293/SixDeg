@@ -1,0 +1,12 @@
+<div>
+    <app-app-navbar></app-app-navbar>
+</div>
+<div class="container">
+
+    <app-galeria [peliculas]="cartelera|slice:0:6" titulo="En Cartelera"></app-galeria>
+
+    <app-galeria [peliculas]="populares|slice:0:6" titulo="Mas Populares"></app-galeria>
+
+    <app-galeria [peliculas]="populareskids|slice:0:6" titulo="Populares para Niños"></app-galeria>
+
+</div>

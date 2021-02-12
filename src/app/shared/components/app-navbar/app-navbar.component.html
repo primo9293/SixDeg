@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+        VideoBlock
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active" *ngIf="!mostrar">
+                <a class="nav-link" [routerLink]="'/home'">Home</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="!mostrar">
+                <a class="nav-link" [routerLink]="'/search'">Search</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="mostrar">
+                <a class="nav-link" [routerLink]="'/admin'">Admin</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="mostrar">
+                <a class="nav-link" [routerLink]="'/admin'">Usuario</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="registro">
+        <a class="navbar-brand" [routerLink]="'/login'" *ngIf="!mostrar">Login</a>
+        <a class="navbar-brand" [routerLink]="'/registrar'" *ngIf="mostrar">Logout</a>
+        <button class="btn btn-light" (click)="logout()" *ngIf="mostrar">Cerrar Sesión</button>
+    </div>
+
+
+
+    <form class="form-inline my-2 my-lg-0" (ngSubmit)="buscarPelicula(buscarnavb.value)">
+        <input class="form-control mr-sm-2" type="text" placeholder="Buscar" #buscarnavb>
+        <button class="btn btn-light" type="submit">Buscar</button>
+    </form>
+
+</nav>

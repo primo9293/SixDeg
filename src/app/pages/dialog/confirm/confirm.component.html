@@ -1,0 +1,19 @@
+<div class="container" style="text-align: center;">
+    <div>
+        <span style="font-size: 180%;font-weight: bold; padding: 5px;">{{ title }}</span>
+    </div>
+    <div>
+        <span style="font-size: 150%; padding: 10px;">{{ message }}</span>
+    </div>
+    <div class="button-container">
+        <button mat-flat-button color="primary" (click)="close('Aceptar')" style="width: 33%;" matTooltip="Guardar los Cambios">
+            Aceptar
+        </button>
+        <button mat-stroked-button (click)="close('Descartar')" style="width: 33%;" matTooltip="Descartar cambios realizados">
+            Descartar
+        </button>
+        <button mat-flat-button color="warn" (click)="close('Cancelar')" style="width: 33%;" matTooltip="Cancelar">
+            Cancelar
+        </button>
+    </div>
+</div>

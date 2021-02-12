@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sixdeg-b0f86": {
+      "hosting": {
+        "sixDeg": [
+          "sixdeg-b0f86"
+        ]
+      }
+    }
+  }
+}
