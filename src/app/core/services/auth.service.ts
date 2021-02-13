@@ -32,7 +32,7 @@ export class AuthService {
     private token: TokenService,
     public afs: AngularFirestore,
     ) { 
-      // this.obtenerUsuario()
+
     }
 
     createUser(email: string, password: string){
@@ -53,10 +53,6 @@ export class AuthService {
         return this.afAuth.authState;
     }
   
-  /*   get isLoggedIn(): boolean {
-      const user = JSON.parse(localStorage.getItem('user'));
-      return (user !== null && user.emailVerified !== false) ? true : false;
-    } */
 
     SetUserData(user) {
       const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
@@ -76,12 +72,10 @@ export class AuthService {
       this.afAuth.authState.subscribe(user => {
         console.log('user',user);
         if (user) {
-          // this.obtenUser = user
           this.userState = user;
           localStorage.setItem('user', JSON.stringify(this.userState));
           JSON.parse(localStorage.getItem('user'));
         } else {
-          // this.obtenUser = null
           localStorage.setItem('user', null);
           JSON.parse(localStorage.getItem('user'));
         }

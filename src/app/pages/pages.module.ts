@@ -10,6 +10,7 @@ import { GaleriaComponent } from './home/galeria/galeria.component';
 import { RouterModule } from '@angular/router';
 import { ConfirmComponent } from './dialog/confirm/confirm.component';
 import { SearchComponent } from './search/search.component';
+import { PagesRoutingModule } from './pages.routing';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SearchComponent } from './search/search.component';
     RouterModule,
     SharedModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    PagesRoutingModule
   ],
   exports: [
     HomeComponent,

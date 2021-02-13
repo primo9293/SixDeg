@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
 
   iniciar() {
     if (this.form.valid) {
-      // console.log('calido');
       const value = this.form.value;
       this.authService.login( value.user_mail, value.user_password )
           .then(() => {
@@ -61,7 +60,6 @@ export class LoginComponent implements OnInit {
       this.form.markAllAsTouched()
     }
 
-    // console.log(this.form.value);
   }
 
 }

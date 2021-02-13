@@ -45,7 +45,6 @@ export class AppNavbarComponent implements OnInit {
   verificarUsuario(){
     var localUsuario = localStorage.setItem('user', JSON.stringify(this.userState));
     // console.log('localUsuario',localUsuario);
-    // this.usuario = this.auth.isLoggedIn
     this.validarRutas(this.usuario)
     // console.log('111',this.usuario);
     return this.usuario; 
